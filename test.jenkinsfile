@@ -3,6 +3,7 @@
 @Library('jenkinslib') _     
 def build = new org.devops.build()
 def deplay = new org.devops.deplay()
+
 String buildshell = "${env.buildShell}"
 String builtools = "${env.buildTools}"
 
@@ -14,6 +15,7 @@ pipeline {
                     script{ 
                         build.Build(builtools,buildshell)
                         deplay.SaltDeplay("jenkins","test.ping")
+                        deplay.Ansible("server1","-m ping")
                     }
             }
         }
