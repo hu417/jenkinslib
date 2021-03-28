@@ -10,7 +10,7 @@ pipeline {
             steps{  
                 timeout(time:1, unit:"MINUTES"){   
                     script{ 
-                        tools.PrintMes("获取代码")
+                        tools.PrintMes("hello world!")
                     }
                 }
             }
