@@ -3,14 +3,14 @@
 def tools = new org.devops.tools()
 String workspace = "/opt/jenkins/workspace"
 pipeline {
-    agent { node {  label "master" }}
+    agent { node { label "master" }}
     stages {
         //下载代码
         stage("GetCode"){ 
             steps{  
-                timeout(time:5, unit:"MINUTES"){   
+                timeout(time:1, unit:"MINUTES"){   
                     script{ 
-                        tools.PrintMes("获取代码",'green')
+                        tools.PrintMes("获取代码")
                     }
                 }
             }
