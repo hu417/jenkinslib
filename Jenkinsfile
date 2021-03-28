@@ -1,6 +1,7 @@
 #!groovy
 @Library('jenkinslib') _     
-def mytools = new org.devops.tools()
+def tools = new org.devops.tools()
+String workspace = "/opt/jenkins/workspace"
 pipeline {
     agent { node {  label "master" }}
     stages {
@@ -9,7 +10,7 @@ pipeline {
             steps{  
                 timeout(time:5, unit:"MINUTES"){   
                     script{ 
-                        mytools.PrintMes("获取代码",'green')
+                        tools.PrintMes("获取代码",'green')
                     }
                 }
             }
